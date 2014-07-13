@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <feed xmlns="http://www.w3.org/2005/Atom"><title>践行见远</title><link href="http://kent0630.github.io/" rel="alternate"></link><link href="http://kent0630.github.io/feeds/all.atom.xml" rel="self"></link><id>http://kent0630.github.io/</id><updated>2014-07-12T12:00:01+08:00</updated><entry><title>vim学习笔记</title><link href="http://kent0630.github.io/vimxue-xi-bi-ji.html" rel="alternate"></link><updated>2014-07-12T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:kent0630.github.io,2014-07-12:vimxue-xi-bi-ji.html</id><summary type="html">&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
-=======
-<feed xmlns="http://www.w3.org/2005/Atom"><title>践行见远</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/all.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2014-07-12T12:00:01+08:00</updated><entry><title>vim学习笔记</title><link href="http://127.0.0.1:8000/vimxue-xi-bi-ji.html" rel="alternate"></link><updated>2014-07-12T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:127.0.0.1:8000,2014-07-12:vimxue-xi-bi-ji.html</id><summary type="html">&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
->>>>>>> 14b5bdb4ef7ca3fb7ffd8b00caa5c76b6bd88399
 &lt;h2&gt;基本使用&lt;/h2&gt;
 &lt;h4&gt;基本操作&lt;/h4&gt;
 &lt;ul&gt;
@@ -446,11 +442,7 @@ snipMate适合较短的片段，load_template适合较大的代码片段&lt;/p&g
 &lt;li&gt;&lt;em&gt;20140127&lt;/em&gt; 增加了文件比较，编码格式，单词间移动，撤销&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;20140201&lt;/em&gt; 增加Bundle管理插件&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;20150515&lt;/em&gt; 新增了macvim中文输入法冲突的问题 &lt;/li&gt;
-<<<<<<< HEAD
 &lt;/ul&gt;</summary></entry><entry><title>python发送Email程序</title><link href="http://kent0630.github.io/send_email.html" rel="alternate"></link><updated>2014-07-12T12:00:01+08:00</updated><author><name>践客</name></author><id>tag:kent0630.github.io,2014-07-10:send_email.html</id><summary type="html">&lt;h4&gt;一个可带附件的例子&lt;/h4&gt;
-=======
-&lt;/ul&gt;</summary></entry><entry><title>python发送Email程序</title><link href="http://127.0.0.1:8000/send_email.html" rel="alternate"></link><updated>2014-07-12T12:00:01+08:00</updated><author><name>践客</name></author><id>tag:127.0.0.1:8000,2014-07-10:send_email.html</id><summary type="html">&lt;h4&gt;一个可带附件的例子&lt;/h4&gt;
->>>>>>> 14b5bdb4ef7ca3fb7ffd8b00caa5c76b6bd88399
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c"&gt;#!/usr/bin/python&lt;/span&gt;
     &lt;span class="c"&gt;#encoding=utf-8&lt;/span&gt;
 
@@ -535,11 +527,7 @@ snipMate适合较短的片段，load_template适合较大的代码片段&lt;/p&g
         from email.header import Header&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-<<<<<<< HEAD
 &lt;/ul&gt;</summary><category term="python"></category><category term="email"></category></entry><entry><title>测试</title><link href="http://kent0630.github.io/ce-shi.html" rel="alternate"></link><updated>2013-07-10T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:kent0630.github.io,2013-07-10:ce-shi.html</id><summary type="html">&lt;h1&gt;Markdown学习笔记&lt;/h1&gt;
-=======
-&lt;/ul&gt;</summary><category term="python"></category><category term="email"></category></entry><entry><title>测试</title><link href="http://127.0.0.1:8000/ce-shi.html" rel="alternate"></link><updated>2013-07-10T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:127.0.0.1:8000,2013-07-10:ce-shi.html</id><summary type="html">&lt;h1&gt;Markdown学习笔记&lt;/h1&gt;
->>>>>>> 14b5bdb4ef7ca3fb7ffd8b00caa5c76b6bd88399
 &lt;h2&gt;windows下vim编辑markdown&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;安装 &lt;a href="http://www.python.org/getit/releases/2.7.3/"&gt;python for windwos环境&lt;/a&gt;. 
