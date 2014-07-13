@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>践行见远 - python</title>
+
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/style.css" />
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/pygments.css" />	
+    <script src="http://kent0630.github.io/theme/js/vendor/custom.modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="http://kent0630.github.io">践行见远</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="http://kent0630.github.io/send_email.html"><h3 class="article-title">python发送Email程序</h3></a>
+<h6 class="subheader" title="2014-07-10T23:00:12">2014年07月10日
+</h6>
+
+
+<h4>一个可带附件的例子</h4>
+<div class="highlight"><pre>    <span class="c">#!/usr/bin/python</span>
+    <span class="c">#encoding=utf-8</span>
+
+    <span class="kn">import</span> <span class="nn">smtplib</span>
+    <span class="kn">import</span> <span class="nn">base64</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+
+    <span class="kn">from</span> <span class="nn">email.mime.multipart</span> <span class="kn">import</span> <span class="n">MIMEMultipart</span>
+    <span class="kn">from</span> <span class="nn">email.mime.text</span> <span class="kn">import</span> <span class="n">MIMEText</span>
+    <span class="kn">from</span> <span class="nn">email.header</span> <span class="kn">import</span> <span class="n">Header</span>
+
+    <span class="c"># 定义发送列表</span>
+    <span class="n">mailto_list</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;xuxiaofeng.nb@ccb.com&quot;</span><span class="err">，</span><span class="s">&quot;raymond_xu@qq.com]</span>
+
+    <span class="c"># 设置服务器名称、用户名、密码以及邮件</span>
+    <span class="n">mail_host</span> <span class="o">=</span> <span class="s">&quot;36.0.191.1&quot;</span>
+    <span class="n">mail_user</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+    <span class="n">mail_pass</span> <span class="o">=</span> <span class="s">&quot;&quot;</span>
+
+    <span class="c"># 发送邮件函数</span>
+    <span class="k">def</span> <span class="nf">send_mail</span><span class="p">(</span><span class="n">mail_from</span><span class="p">,</span><span class="n">to_list</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        to_list: 发送给谁</span>
+<span class="sd">        sub: 主题</span>
+<span class="sd">        context: 内容</span>
+<span class="sd">        send_mail(&quot;xxx.nb@ccb.com&quot;,&quot;sub&quot;,&quot;context&quot;)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">MIMEMultipart</span><span class="p">()</span>  <span class="c">#支持附件</span>
+
+        <span class="c"># 如果html格式，将_subtpye设成html</span>
+        <span class="c"># msg = MIMEText(context, _subtype=&#39;plain&#39;, _charset=&#39;utf-8&#39;) </span>
+
+        <span class="n">context</span> <span class="o">+=</span> <span class="s">&#39;</span><span class="se">\n\r</span><span class="s">&#39;</span>
+        <span class="n">txt1</span> <span class="o">=</span> <span class="n">MIMEText</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">_subtype</span><span class="o">=</span><span class="s">&#39;plain&#39;</span><span class="p">,</span> <span class="n">_charset</span><span class="o">=</span><span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="c"># txt1.replace_header(&#39;Content-Transfer-Encoding&#39;, &#39;quoted-printable&#39;)  #否则邮件原文看不懂，但并不影响读信</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">txt1</span><span class="p">)</span>
+
+        <span class="c"># att1=base64.encodestring(open(&#39;output.txt&#39;,&#39;rb&#39;).read())  #附件base64编码</span>
+        <span class="n">att1</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;output.txt&#39;</span><span class="p">,</span><span class="s">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> 
+        <span class="n">att1</span><span class="o">=</span><span class="n">MIMEText</span><span class="p">(</span><span class="n">att1</span><span class="p">)</span>
+        <span class="n">att1</span><span class="o">.</span><span class="n">replace_header</span><span class="p">(</span><span class="s">&#39;Content-Type&#39;</span><span class="p">,</span><span class="s">&#39;application/octet-stream;name=&quot;</span><span class="si">%s</span><span class="s">&quot;&#39;</span> <span class="o">%</span> <span class="n">Header</span><span class="p">(</span><span class="s">&#39;中文附件测试.txt&#39;</span><span class="p">,</span><span class="s">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="n">att1</span><span class="o">.</span><span class="n">add_header</span><span class="p">(</span><span class="s">&#39;Content-Disposition&#39;</span><span class="p">,</span> <span class="s">&#39;attachment;filename=&quot;</span><span class="si">%s</span><span class="s">&quot;&#39;</span> <span class="o">%</span><span class="n">Header</span><span class="p">(</span><span class="s">&#39;中文附件名测试.txt&#39;</span><span class="p">,</span><span class="s">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">att1</span><span class="p">)</span>
+
+        <span class="c"># att2=open(&#39;library.zip&#39;,&#39;rb&#39;).read()  </span>
+        <span class="c"># att2=MIMEText(att2)</span>
+        <span class="c"># att2.replace_header(&#39;Content-Type&#39;,&#39;application/octet-stream;name=&quot;%s&quot;&#39; % Header(&#39;lib.zip&#39;,&#39;utf-8&#39;))</span>
+        <span class="c"># att2.add_header(&#39;Content-Disposition&#39;, &#39;attachment;filename=&quot;%s&quot;&#39; %Header(&#39;lib.zip&#39;,&#39;utf-8&#39;))</span>
+        <span class="c"># msg.attach(att2)</span>
+
+        <span class="n">msg</span><span class="p">[</span><span class="s">&#39;Subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">msg</span><span class="p">[</span><span class="s">&#39;From&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Header</span><span class="p">(</span><span class="n">mail_from</span><span class="p">,</span> <span class="s">&#39;utf-8&#39;</span><span class="p">)</span>
+        <span class="n">msg</span><span class="p">[</span><span class="s">&#39;To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_list</span><span class="p">)</span> 
+        <span class="k">try</span><span class="p">:</span> 
+            <span class="n">send_smtp</span> <span class="o">=</span> <span class="n">smtplib</span><span class="o">.</span><span class="n">SMTP</span><span class="p">()</span>
+            <span class="n">send_smtp</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">mail_host</span><span class="p">)</span>
+            <span class="c">#send_smtp.login(mail_user, mail_pass)</span>
+            <span class="n">send_smtp</span><span class="o">.</span><span class="n">sendmail</span><span class="p">(</span><span class="n">mail_from</span><span class="p">,</span> <span class="n">to_list</span><span class="p">,</span> <span class="n">msg</span><span class="o">.</span><span class="n">as_string</span><span class="p">())</span>
+            <span class="n">send_smtp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">print</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+    <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">True</span> <span class="o">==</span> <span class="n">send_mail</span><span class="p">(</span><span class="s">&quot;徐小峰&lt;xuxiaofeng.nb@ccb.com&gt;&quot;</span><span class="p">,</span><span class="n">mailto_list</span><span class="p">,</span> <span class="s">&quot;邮件主题&quot;</span><span class="p">,</span> <span class="s">&quot;邮件正文&quot;</span><span class="p">)):</span> 
+        <span class="k">print</span> <span class="p">(</span><span class="s">u&quot;邮件发送成功&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="k">print</span> <span class="p">(</span><span class="s">u&quot;邮件发送失败&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<h4>问题</h4>
+<ul>
+<li>
+<p>py2exe打包时出现如下错误
+        The following modules appear to be missing
+        ['_scproxy', 'email.Header', 'email.MIMEMultipart']</p>
+<ul>
+<li>查看了python的lib目录下mail下的文件，可能和之前版本发生了变化，导入模块改成如下即可：
+        from email.mime.multipart import MIMEMultipart<br />
+        from email.header import Header</li>
+</ul>
+</li>
+</ul><p class="subheader">Category: <a href="http://kent0630.github.io/category/ji-zhu.html">技术</a>
+
+    Tagged: 
+    <a href="http://kent0630.github.io/tag/python.html">python </a>
+    <a href="http://kent0630.github.io/tag/email.html">email </a>
+</p>
+
+
+
+            </article>
+
+
+
+
+            <!-- /#posts-list -->
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://kent0630.github.io/archives.html">Archives</a>
+            <li><a href="http://kent0630.github.io/tags.html">Tags</a>
+            <li><a href="http://kent0630.github.io/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://kent0630.github.io/category/ji-zhu.html">技术</a></li>
+            <li><a href="http://kent0630.github.io/category/wei-fen-lei.html">未分类</a></li>
+   
+        </ul>
+
+        <h5 class="sidebar-title">Links</h5>
+        <ul class="side-nav">
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav social">
+            <li><a href="#">豆瓣</a></li>
+            <li><a href="#">知乎</a></li>
+            <li><a href="http://weibo.com/jakerxu">我的微博</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <p><a href="http://kent0630.github.io">践行见远</a> &copy; 践客 2014
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="https://github.com/kent0630/kent0630.github.io">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+</html>

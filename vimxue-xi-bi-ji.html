@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>vim学习笔记</title>
+
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/style.css" />
+    <link rel="stylesheet" href="http://kent0630.github.io/theme/css/pygments.css" />	
+    <script src="http://kent0630.github.io/theme/js/vendor/custom.modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="http://kent0630.github.io">践行见远</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://kent0630.github.io/vimxue-xi-bi-ji.html" rel="bookmark"
+        title="Permalink to vim学习笔记">vim学习笔记</a></h3>
+    </header>
+
+<h6 class="subheader" title="2014-07-12T00:00:00">2014年07月12日
+</h6>
+
+
+    <h1>VIM/GVIM学习笔记</h1>
+<h2>基本使用</h2>
+<h4>基本操作</h4>
+<ul>
+<li><em>5dd</em> 从当前行开始删除5行</li>
+<li><em>cc</em> 删除当前行并且进入插入模式</li>
+<li><em>5yy</em> 从当前行开始拷贝5行</li>
+<li><em>1,3d</em> 删除1至3行</li>
+<li><em>1,3y</em> 拷贝1至3行 （.代表当前行，$代表最后一行）</li>
+<li><em>:<C\-F></em> 历史命令记录的窗口</li>
+<li><em>:Explore</em>或<em>E</em> 打开文件浏览器</li>
+<li><em><C\-G></em> 光标所在位置的行数和列数报告</li>
+<li><em>D</em> 删除到行尾</li>
+<li><em>:x</em> 如果修改则保存</li>
+<li><em>set rnu</em> 显示相对行号</li>
+<li><em>u</em> 撤销，<em><C\-R></em> 重做</li>
+<li><em>.</em> 重做上一个命令</li>
+</ul>
+<h4>光标移动</h4>
+<ul>
+<li><s>zz 让光标所杂的行居屏幕中央</s></li>
+<li><s>zt 让光标所杂的行居屏幕最上一行 t=top</s></li>
+<li><s>zb 让光标所杂的行居屏幕最下一行 b=bottom</s></li>
+<li><em>H</em>,<em>L</em>,<em>M</em> 控制光标移动到当前屏幕头屏幕尾和屏幕中</li>
+<li><em>nG</em> 跳转命令。n为行数，该命令立即使光标跳到指定行</li>
+<li><em>w</em> , <em>b</em> 光标向前向后跳转一个单词</li>
+<li><em>N|</em> 光标到第N列</li>
+<li><em>gg</em> 到文件第一行</li>
+<li><em>G</em> 到文件最后一行</li>
+<li><em><C\-]></em> 链接跳转</li>
+<li><em><C\-T></em>,<em><C\-O></em> 链接跳转和跳回</li>
+</ul>
+<h4>滚动</h4>
+<ul>
+<li>整页翻页<em><C\-F><C\-B></em> F就是Forword B就是Backward</li>
+<li>翻半页<em><C\-D><C\-U></em>   D=down U=up</li>
+<li><code>:set scrolloff=2</code> 上下移动光标时, 始终保持光标上或下有两行在屏幕上.</li>
+</ul>
+<h4>窗口</h4>
+<ul>
+<li><em><C\-W> h，<C\-W> j，<C\-W> k，<C\-W> l</em> 切换到左下上右窗口</li>
+<li><em>:split</em> 文件名（开启另一个窗口察看指定文件）:new 开新窗口新建文件</li>
+<li><em>:vsplit</em> 文件名（开启另一个窗口察看指定文件）:vnew 开新窗口新建文件</li>
+<li><em>:only</em> 只保留当前窗口</li>
+<li><em>:close</em> 关闭窗口，可防止最后一个窗口时退出vim</li>
+</ul>
+<h4>标签页</h4>
+<ul>
+<li><em>:tabe</em>新建一个标签页。</li>
+<li><em>:tabn</em>(<em>gt</em>) \ <em>:tabp</em>(<em>gT</em>) 切换到下一个\上一个标签页。</li>
+<li><em>:close</em> 关闭当前标签页。</li>
+<li><em>:qa</em> 关闭所有标签页退出。</li>
+<li><em>:tabdo</em>+命令 在所有的标签页中执行指定命令  </li>
+</ul>
+<h4>替换与查找</h4>
+<ul>
+<li>替换查找<em>%s/word1/word2/g</em></li>
+<li><em>*</em> 转到当前光标所指的单词下一次出现的地方,然后可以通过 <em>n</em> 继续选择</li>
+<li><em>#</em> 转到当前光标所指的单词上一次出现的地方</li>
+<li><em>g*,g#</em> 与以上功能类似，但也查找部分配配</li>
+</ul>
+<h2>高级技巧</h2>
+<h4>多文件编辑</h4>
+<ul>
+<li><em>:args</em> 查看文件列表</li>
+<li><em>:(2)n(ext)</em>编辑下一文件，并且可以在前面计数</li>
+<li><em>:p(revious)</em>编辑上一文件</li>
+<li><em>:first :last</em>  跳转到第一个或者最后一个文件</li>
+<li><em><C\-^></em>在文件列表中的两个文件间跳转</li>
+<li><em>:args file1.c file2.c file3.h</em> 打开另一个文件列表</li>
+<li>一般情况下，如果当前文件没保存，需要保存他，或者在args后加  ! 放弃保存<br />
+当然也可以设置<em>:set autowrite</em> 自动保存，或者<em>:set noautowrite</em>关闭自动保存</li>
+</ul>
+<h4>MARK</h4>
+<ul>
+<li><em>m a</em> 定义标记a</li>
+<li><em>'a</em> 跳转到定义过的标记a</li>
+<li><em>:marks a</em> 列出标记a，缺省参数列出所有的位置标记</li>
+<li><em>:delm!</em> 删除所有标记，<em>delm a</em> 删除标记a</li>
+<li>
+<p>标记类别：  </p>
+<ul>
+<li>'a - 'z  小写位置标记，在每个文件内有效。  </li>
+<li>'A - 'Z  大写位置标记，也叫做文件标记，在文件间都有效。  </li>
+<li>'0 - '9  数字位置标记，在 .viminfo 文件里设置。  </li>
+</ul>
+</li>
+<li>
+<p>当你跳转到另一个文件后，有两个预定义的标记非常有用:  </p>
+<ul>
+<li><em>`"</em> 这个标记使你跳转到你上次离开这个文件时的位置</li>
+<li><em>`.</em> 标记记住你最后一次修改文件的位置</li>
+</ul>
+</li>
+</ul>
+<p>文件间拷贝文本，由于windows下开启了剪贴板共享，所以暂时不学习
+共享剪贴板也有不便之处</p>
+<h4>寄存器使用</h4>
+<ul>
+<li>可参考帮助:help v_p</li>
+<li><em>:reg</em> 查看当前寄存器</li>
+<li>使用计数器前调用"&lt; register&gt;</li>
+<li>"&lt; register&gt;dd 将删除的行存到指定寄存器中</li>
+<li>
+<p>2,4y &lt; register&gt; 将2-4行复制到制定寄存器中</p>
+</li>
+<li>
+<p>计数器分类和主要计数器：</p>
+<ol>
+<li>无名寄存器 ""</li>
+<li>10 个编号寄存器 "0 到 "9</li>
+<li>行内删除寄存器 "-</li>
+<li>26 个命名的寄存器 "a 到 "z 或者 "A 到 "Z</li>
+<li>四个只读寄存器 ":、".、"% 和 "#</li>
+<li>表达式寄存器 "=</li>
+<li>选择和拖放寄存器 "*、"+ 和 "~</li>
+<li>黑洞寄存器寄存器 "_</li>
+<li>最近搜索模式寄存器 "/</li>
+</ol>
+</li>
+<li>%寄存器中存储了当前文件的文件名</li>
+<li>#包含当前文件的目录路径</li>
+</ul>
+<h4>录制宏命令</h4>
+<ul>
+<li>用<em>q&lt; register&gt;</em>(regeister是指用户自己定义的从a-z的寄存器)，然后进行你要重复的操作，可以使很多步操作哦，完成 后用 <em>q</em> 来结束。这样，当你需要重新做这些操作的时候，只需要用<em>n@&lt; register&gt;</em>来调用即可,n为执行次数，省略为1<br />
+<em>@@</em> 重复上一个操作</li>
+</ul>
+<h4>修改文件名</h4>
+<ul>
+<li><em>:saveas filename</em> 改变当前文件名立即保存</li>
+<li><em>:file filename</em> 改变当前文件名暂时不保存</li>
+</ul>
+<h4>折叠</h4>
+<ul>
+<li><em>zf</em>  F-old creation (创建折叠)    命令：zf 行数 j </li>
+<li><em>zo</em>  O-pen a fold (打开折叠)  <em>zO</em> 打开全部 </li>
+<li><em>zc</em>  C-lose a fold (关闭折叠)  <em>zC</em> 关闭全部</li>
+<li><em>zA</em> 
+你可以重复 "zr" 和 "zm" 来打开和关闭若干层嵌套的折叠</li>
+</ul>
+<h4>键盘映射（@TODO）</h4>
+<ul>
+<li><em>:map ,</em>           : 列出以逗号开始的键盘映射</li>
+<li><em>\&lt;unique></em> 如果该映射已经存在，系统会提示错误</li>
+</ul>
+<h4>编辑技巧</h4>
+<ul>
+<li>普通模式<ul>
+<li><em>di[</em> 删除一对 [] 中的所有字符</li>
+<li><em>di(</em> 删除一对 () 中的所有字符</li>
+<li><em>di&lt;</em> 删除一对 &lt;&gt; 中的所有字符</li>
+<li><em>di{</em> 删除一对 {} 中的所有字符</li>
+<li><em>dit</em> 删除一对 HTML/XML 的标签内部的所有字符</li>
+<li><em>di”</em> di’ 删除一对引号字符 (” 或 ‘ ) 中所有字符</li>
+</ul>
+</li>
+<li>插入模式<ul>
+<li><em>ci[</em> 删除一对 [] 中的所有字符并进入插入模式</li>
+<li><em>ci(</em> 删除一对 () 中的所有字符并进入插入模式</li>
+<li><em>ci&lt;</em> 删除一对 &lt;&gt; 中的所有字符并进入插入模式</li>
+<li><em>ci{</em> 删除一对 {} 中的所有字符并进入插入模式</li>
+<li><em>cit</em> 删除一对 HTML/XML 的标签内部的所有字符并进入插入模式</li>
+<li><em>ci”</em> ci’ 删除一对引号字符 (” 或 ‘) 中所有字符并进入插入模式</li>
+</ul>
+</li>
+<li>
+<p>选择模式</p>
+<ul>
+<li><em>vi[</em> 选择一对 [] 中的所有字符</li>
+<li><em>vi(</em> 选择一对 () 中的所有字符</li>
+<li><em>vi&lt;</em> 选择一对 &lt;&gt; 中的所有字符</li>
+<li><em>vi{</em> 选择一对 {} 中的所有字符</li>
+</ul>
+</li>
+<li>
+<p><em>dt(</em> 删除到下一个"("前为之  t( 代表跳转到下一个(前 </p>
+</li>
+<li><em>:set a</em> 列出配置项a, <em>:set all</em> 列出所有配置项</li>
+<li><em>ddp</em> 上下两行调换</li>
+</ul>
+<h4>文件编码和格式</h4>
+<ul>
+<li>三个配置文件编码的参数encoding(enc)、fileencoding(fenc)、fileecodings(fencs)<ul>
+<li>enc，vim用于显示的编码，不管最后的文件是什么编码的，vim都会将其转换为当前系统编码来进行处理</li>
+<li>fencs,是用来在打开文件的时候进行解码的猜测列表</li>
+<li>fenc，是当前文件的编码，也就是说，一个在vim里面已经正确显示了的文件(前提是你的系统环境跟你的enc设置匹配)，你可以通过改变 fenc后再w来将此文件存成不同的编码</li>
+</ul>
+</li>
+<li>fileformats(ffs)指定优先处理的文件格式，fileformat(ff)指定当前文件的格式</li>
+<li>改变文件格式（dos-&gt;unix）方法如下: <div class="highlight"><pre><span class="n">vim</span> <span class="n">dos</span><span class="p">.</span><span class="n">txt</span>
+<span class="o">:</span><span class="n">set</span> <span class="n">fileformat</span><span class="o">=</span><span class="n">unix</span>
+<span class="o">:</span><span class="n">w</span>
+</pre></div>
+
+
+</li>
+</ul>
+<blockquote>
+<p><a href="http://blog.csdn.net/keepliving/article/details/5623362">VIM乱码原因与解决方案</a></p>
+</blockquote>
+<h4>单词间移动</h4>
+<ul>
+<li><em>w</em>、<em>e</em>向后移动一个单词（分别停留在词首和词尾），<em>b</em>向后移动一个单词（停留在词尾）</li>
+<li>单词定义通过<em>iskeyword</em>进行设置，具体参见<em>：h iskeyword</em></li>
+<li><strong>WORD</strong>（由非空白字符序列组成字符串，以空白分隔，空行也算一个WORD）移动，<em>W</em>、<em>E</em>、<em>B</em>移动含义和w、e、b相同，只是移动幅度从一个单词变为一个WORD</li>
+</ul>
+<h4>个性化vimrc</h4>
+<div class="highlight"><pre><span class="n">set</span> <span class="n">autoindent</span>
+</pre></div>
+
+
+<p>自动缩排，如当前行是从第3个字符的位置开始编辑的,按回车后光标会自动定位在下一行第三3个字符的位置。</p>
+<div class="highlight"><pre><span class="n">set</span> <span class="n">paste</span>
+</pre></div>
+
+
+<p>置粘贴模式，这样粘贴过来的程序代码就不会错位了。</p>
+<div class="highlight"><pre><span class="n">set</span> <span class="n">guifont</span><span class="o">=*</span> <span class="err">显示字体对话框设置字体</span>
+<span class="n">set</span> <span class="n">guifontwide</span><span class="o">=*</span>
+</pre></div>
+
+
+<p>wide是双字节字体，这样可以分别设置中文和英文字体</p>
+<h4>撤销undo</h4>
+<ul>
+<li><code>set undolevels=5000</code> 设置可撤销的次数</li>
+<li><code>u</code> 撤销命令，<code>:redo</code> <C-R> 为取消撤销（重做）</li>
+<li><code>:undolist</code> 显示撤销列表，<code>:undo+编号</code>撤销到某个分支</li>
+<li><code>g-</code>,<code>g+</code> 返回较早的文本状态和返回较新的文本状态</li>
+<li><code>:earlier 10m</code> 恢复到十分钟前的文本状态，<code>:later 5s</code>跳转到5秒钟后的状态</li>
+</ul>
+<h4>其他</h4>
+<p>把当前文件转换成HTML文件  </p>
+<div class="highlight"><pre><span class="o">:</span><span class="n">runtime</span><span class="o">!</span> <span class="n">syntax</span><span class="o">/</span><span class="mi">2</span><span class="n">html</span><span class="p">.</span><span class="n">vim</span>
+</pre></div>
+
+
+<hr />
+<h2>程序员常用技巧</h2>
+<ul>
+<li>% 跳到匹配的括号,跳到匹配处，比如括号之间，C的宏指令#if #else #endif之间</li>
+<li>gD 跳到局部变量的定义处，高亮所有局部变量  <C-O>跳转回来,<C-I>结合<C-O>可以来回跳转</li>
+<li>[I     : 显示光标处的狭义字可以匹配的行(高级指令)<br />
+    可以全文查找与光标处的狭义字相匹配的字，<br />
+    这在查找函数原型和实现，或者变量使用的时候很有用</li>
+<li><strong>排版</strong> 在任何处v%选中该括号内的所有内容，然后=可以按C语言排版程序<br />
+gg=G可以全文排版</li>
+<li><strong>缩进</strong> 选中代码块然后>或者\&lt;可以改变代码块的缩进 
+　<em>&gt;&gt;</em> 和 <em>&lt;&lt;</em> 改变一行的缩进</li>
+<li>给代码插入行号<div class="highlight"><pre><span class="o">:</span><span class="n">g</span><span class="o">/^/</span><span class="n">exec</span> <span class="s">&quot;s/^/&quot;</span><span class="p">.</span><span class="n">strpart</span><span class="p">(</span><span class="n">line</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">).</span><span class="s">&quot;    &quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+
+</li>
+</ul>
+<h4>配色</h4>
+<ul>
+<li>配色文件在colors目录下</li>
+<li>colorscheme murphy(配色方案名称)  </li>
+<li>其他配色方案可以参考：<a href="http://code.google.com/p/vimcolorschemetest/">http://code.google.com/p/vimcolorschemetest/</a><br />
+可以在其中找到一个自己喜欢的。安装colorscheme时，只需要把它们拷贝到.vim/color目录下就行了。</li>
+<li>【插件】 <strong><em>csExplorer</em></strong><br />
+使用输入:ColorSchemeExplorer即可</li>
+</ul>
+<blockquote>
+<p><a href="http://blog.csdn.net/mdl13412/article/details/8129904">自己动手扩展vim插件——配色篇</a></p>
+</blockquote>
+<h4>自动补全</h4>
+<ul>
+<li><em><C\-P>和<C\-N></em> 连续按选择
+-【插件】<strong><em>AutoClose</em></strong> --（http://www.vim.org/scripts/script.php?script_id=1849 ）
+不过这个插件目前我在使用的过程中发现有个缺陷，就是在嵌套的括号中再插入一组括号，右括号插入不了，只能采取关闭插件功能，或者采用粘贴的方式。例如：
+        if ( ( a  &gt;  b  &amp;&amp;  c  &gt;  d )
+你要在“b”后面插一个右括号，你会发现无法完成操作。当你insert模式下输入“）”时，光标直接跳到“d”后面的括号“）”之后，这种情况下 我解决这个问题的办法是关闭插件，输入“/a” AutoClose Off，然后插入右括号;再打开插件功能,输入“/a” AutoClose On。</li>
+<li>
+<p>【插件】<strong><em>neocomplcache</em></strong> 和<strong><em>neosnippet</em></strong> @TODO</p>
+<blockquote>
+<p><a href="http://yunying.me/?p=486">neocomplcache和neosnippet配置心得</a>
+<a href="http://www.cnblogs.com/iiaijimaai/archive/2013/05/19/3054115.html">打造一个有感觉的Vim（二）</a></p>
+</blockquote>
+</li>
+<li>
+<p>【插件】<strong><em>snipMate</em></strong></p>
+<ul>
+<li>通过tab键触发  </li>
+<li>在snippets目录下配置代码片段  </li>
+<li>_.snippets文件是全局配置</li>
+</ul>
+</li>
+</ul>
+<h4>注释开关</h4>
+<ul>
+<li>
+<p><strong>EnhancedCommentify</strong> -- 程序代码注释 （<a href="http://www.vim.org/scripts/script.php?script_id=23">http://www.vim.org/scripts/script.php?script_id=23</a>） </p>
+<ul>
+<li><em>\&lt;leader>x</em> 实现注释的开闭</li>
+<li><em>\&lt;leader>c</em> 开闭注释然后跳转到下一行
+要实现上面的注释自动缩进、在/×  ×/填充空格，需要定义两个全局变量来控制脚本的执行.你可以在.vimrc中进行定义，以控制制缩进、注释样式等来符合你的要求。详细变量也参脚本说明。 <div class="highlight"><pre><span class="mi">1</span>         <span class="n">let</span>  <span class="n">g</span><span class="o">:</span><span class="n">EnhCommentifyRespectIndent</span><span class="o">=</span> <span class="err">&#39;</span><span class="n">Yes</span><span class="err">&#39;</span>
+<span class="mi">2</span>         <span class="n">let</span>  <span class="n">g</span><span class="o">:</span><span class="n">EnhCommentifyPretty</span><span class="o">=</span> <span class="err">&#39;</span><span class="n">Yes</span><span class="err">&#39;</span>
+</pre></div>
+
+
+</li>
+</ul>
+<p>不支持esqlc，下载插件后需要手动添加对esqlc的支持</p>
+</li>
+<li>
+<p><strong>NerdComment</strong> 更加强大的注释插件</p>
+<ul>
+<li><em>&lt;\leader>ci</em> 加注释，再按取消注释</li>
+<li><em>\&lt;leader>cc</em> 加注释，再按重复添加</li>
+<li><em>\&lt;leader>cu</em> 取消注释</li>
+<li><em>\&lt;leader>cA</em> 行尾注释</li>
+<li><code>let NERDSpaceDelims = 1</code> 在左注释符之后，右注释符之前留有空格</li>
+</ul>
+</li>
+</ul>
+<h4>代码比较</h4>
+<ul>
+<li><code>diffsplit file2</code> 水平分割窗口与当前文件比较，</li>
+<li><code>vert diffsplit file2</code> 垂直分割窗口与当前文件比较</li>
+<li><code>:set diffopt=context:3</code> 显示不同文本的上下文3行，默认为6行</li>
+<li><code>:diffupdate</code> 强制更新比较结果</li>
+<li><em>[c</em>、<em>]c</em> 查找前（后）一个不同点</li>
+<li>文件合并： <code>dp</code>(diff put),<code>do</code>(diff get)</li>
+</ul>
+<h4>网络编辑</h4>
+<p>【插件】<strong><em>netrw</em></strong>（vim7已自带此插件）：  </p>
+<div class="highlight"><pre><span class="o">:</span><span class="n">e</span> <span class="n">ftp</span><span class="o">:</span><span class="c1">//user@host:port/filepath</span>
+</pre></div>
+
+
+<p>阅读目录命令最后要加斜杠，目录浏览方式通过i改变,s改变排序方式</p>
+<h4>代码模板</h4>
+<p>【插件】<strong><em>load_template</em></strong></p>
+<blockquote>
+<p><a href="http://www.vimer.cn/2010/02/vimer-cn%E5%8E%9F%E5%88%9Bvimgvim%E6%8F%92%E4%BB%B6load_template%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83.html">《vimer.cn原创vim(gvim)插件load_template正式发布》</a><br />
+snipMate适合较短的片段，load_template适合较大的代码片段</p>
+</blockquote>
+<h4>版本控制(@TODO)</h4>
+<hr />
+<h2>vimscript</h2>
+<p><em>:help vim-script-intro</em> vimScript的帮助(教程)</p>
+<blockquote>
+<p>不错的参考文章（共五个部分）: <a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-1/">使用脚本编写 Vim 编辑器[1]</a> <a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-2/">[2]</a> <a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-3/">[3]</a> <a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-4/">[4]</a> <a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-5/">[5]</a>  </p>
+</blockquote>
+<p>执行脚本命令： <em>source 脚本地址</em> 
+或者，可以在 Vim 命令行中，在冒号后面直接输入脚本命令。例如：</p>
+<div class="highlight"><pre><span class="err">：</span><span class="n">call</span> <span class="n">MyBackupFunc</span><span class="p">(</span><span class="n">expand</span><span class="p">(</span><span class="sc">&#39;%&#39;</span><span class="p">),</span> <span class="p">{</span> <span class="err">&#39;</span><span class="n">all</span><span class="err">&#39;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">save</span><span class="sc">&#39;:&#39;</span><span class="n">recent</span><span class="err">&#39;</span><span class="p">})</span>
+</pre></div>
+
+
+<p>通过在 Vim 内输入 <code>:help keycodes</code> 可以看到这些特殊符号的完整列表。 <br />
+学习内置函数 <code>:help functions</code>  <br />
+内置函数列表 <code>:help function-list</code></p>
+<hr />
+<h2>关于插件</h2>
+<h4>使用Bundle管理插件</h4>
+<ul>
+<li>安装Bundle插件,需要安装git支持，然后执行如下命令，后面的目标地址可以自行指定<div class="highlight"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/gmarik/vundle.git ~/.vim/vimfiles/bundle/vundle</span>
+</pre></div>
+
+
+<ul>
+<li>修改vimrc文件，添加如下内容</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span class="n">set</span> <span class="n">nocompatible</span>               <span class="s">&quot; be iMproved</span>
+<span class="n">filetype</span> <span class="n">off</span>                   <span class="s">&quot; required!</span>
+
+<span class="n">set</span> <span class="n">rtp</span><span class="o">+=~/</span><span class="p">.</span><span class="n">vim</span><span class="o">/</span><span class="n">bundle</span><span class="o">/</span><span class="n">vundle</span><span class="o">/</span>  <span class="s">&quot;需要修改该路径到安装目录</span>
+<span class="n">call</span> <span class="n">vundle</span><span class="err">#</span><span class="n">rc</span><span class="p">()</span>
+
+<span class="s">&quot; let Vundle manage Vundle</span>
+<span class="s">&quot; required!</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">gmarik</span><span class="o">/</span><span class="n">vundle</span><span class="err">&#39;</span>
+<span class="s">&quot; original repos on github</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">tpope</span><span class="o">/</span><span class="n">vim</span><span class="o">-</span><span class="n">fugitive</span><span class="err">&#39;</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">Lokaltog</span><span class="o">/</span><span class="n">vim</span><span class="o">-</span><span class="n">easymotion</span><span class="err">&#39;</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">rstacruz</span><span class="o">/</span><span class="n">sparkup</span><span class="err">&#39;</span><span class="p">,</span> <span class="p">{</span><span class="err">&#39;</span><span class="n">rtp</span><span class="err">&#39;</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">vim</span><span class="o">/</span><span class="err">&#39;</span><span class="p">}</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">tpope</span><span class="o">/</span><span class="n">vim</span><span class="o">-</span><span class="n">rails</span><span class="p">.</span><span class="n">git</span><span class="err">&#39;</span>
+<span class="s">&quot; vim-scripts 上的插件可以直接配置名字 </span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">L9</span><span class="err">&#39;</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">FuzzyFinder</span><span class="err">&#39;</span>
+<span class="s">&quot; non github repos</span>
+<span class="n">Bundle</span> <span class="err">&#39;</span><span class="n">git</span><span class="o">:</span><span class="c1">//git.wincent.com/command-t.git&#39;</span>
+<span class="s">&quot; ...</span>
+
+<span class="n">filetype</span> <span class="n">plugin</span> <span class="n">indent</span> <span class="n">on</span>     <span class="s">&quot; required!</span>
+<span class="s">&quot;</span>
+<span class="s">&quot; Brief help  -- 此处后面都是vundle的使用命令</span>
+<span class="s">&quot; :BundleList          - list configured bundles</span>
+<span class="s">&quot; :BundleInstall(!)    - install(update) bundles</span>
+<span class="s">&quot; :BundleSearch(!) foo - search(or refresh cache first) for foo</span>
+<span class="s">&quot; :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles</span>
+<span class="s">&quot;</span>
+<span class="s">&quot; see :h vundle for more details or wiki for FAQ</span>
+<span class="s">&quot; NOTE: comments after Bundle command are not allowed.      </span>
+</pre></div>
+
+
+<ul>
+<li>默认会将插件安装到.vim目录下，需要修改<code>bundle/vundle/autoload/vundle.vim</code>中的<code>vundle#rc</code>函数（43行），将路径改成需要下载到的目标地址即可</li>
+<li>Bundle 命令介绍<ul>
+<li><strong>BundleSearch</strong> keyword  搜索关键字为keyword的插件</li>
+<li><strong>BundleInstall</strong> 安装插件，已安装过的会自动跳过</li>
+<li><strong>BundleUpdate</strong> 更新所有插件，一旦git源中插件的内容有变化会自动更新</li>
+<li><strong>BundleClean</strong>  将vimrc配置中的<code>Bundel XXX</code>注释，然后执行该命令，XXX插件会被删除</li>
+<li><strong>BundleList</strong> 列出所有已启用的插件</li>
+</ul>
+</li>
+</ul>
+<h4>其他</h4>
+<ul>
+<li><em>:set runtimepath</em> 查看插件安装路径，vim插件一般安装在 5 个地方,可以通过<code>:set rtp+=xxx</code>修改</li>
+<li>
+<p><em>:scriptnames</em> 列出所有执行过的脚本名字，以它们初次执行之顺序排列。（<strong>注意：按顺序加载</strong>）<br />
+<strong>TIPS:</strong> ~\vimfiles下便于迁移和版本升级,使用网盘同步可以让用户体验一致</p>
+</li>
+<li>
+<p><strong><em>vimperator</em></strong> 像使用vim一样使用firefox的插件  </p>
+</li>
+<li>
+<p>macvim中文输入法执行时被错误捕获的问题：<br />
+执行:<code>defaults write org.vim.MacVim MMUseInlineIm 0</code></p>
+</li>
+</ul>
+<hr />
+<h2>参考</h2>
+<blockquote>
+<p><a href="http://wiki.hotoo.me/Vim.html">闲耘的Vim</a> Vim非常全面的介绍。<br />
+<a href="http://www.berlinix.com/index.php">波斯克斯</a> 关于不错的涉及vim尤其是vimViki的网络日志
+<a href="http://www.360doc.com/content/10/1128/15/4807202_73143894.shtml">VIM学习笔记</a> 很不错的学习笔记，图文并茂</p>
+</blockquote>
+<h3>修订记录：</h3>
+<ul>
+<li><em>201204</em>   初稿</li>
+<li><em>20120607</em> 增加rnu</li>
+<li><em>20140127</em> 增加了文件比较，编码格式，单词间移动，撤销</li>
+<li><em>20140201</em> 增加Bundle管理插件</li>
+<li><em>20150515</em> 新增了macvim中文输入法冲突的问题 </li>
+</ul>
+<p class="subheader">Category: <a href="http://kent0630.github.io/category/wei-fen-lei.html">未分类</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://kent0630.github.io/archives.html">Archives</a>
+            <li><a href="http://kent0630.github.io/tags.html">Tags</a>
+            <li><a href="http://kent0630.github.io/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://kent0630.github.io/category/ji-zhu.html">技术</a></li>
+            <li><a href="http://kent0630.github.io/category/wei-fen-lei.html">未分类</a></li>
+   
+        </ul>
+
+        <h5 class="sidebar-title">Links</h5>
+        <ul class="side-nav">
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav social">
+            <li><a href="#">豆瓣</a></li>
+            <li><a href="#">知乎</a></li>
+            <li><a href="http://weibo.com/jakerxu">我的微博</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <p><a href="http://kent0630.github.io">践行见远</a> &copy; 践客 2014
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="https://github.com/kent0630/kent0630.github.io">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+</html>
