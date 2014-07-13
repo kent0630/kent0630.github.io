@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>践行见远</title><link>http://xuxiaofeng.me/</link><description></description><atom:link href="http://xuxiaofeng.me/feeds/jian-ke.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Jul 2014 12:00:01 +0800</lastBuildDate><item><title>vim学习笔记</title><link>http://xuxiaofeng.me/vimxue-xi-bi-ji.html</link><description>&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>践行见远</title><link>http://kent0630.github.io/</link><description></description><atom:link href="http://kent0630.github.io/feeds/jian-ke.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Jul 2014 12:00:01 +0800</lastBuildDate><item><title>vim学习笔记</title><link>http://kent0630.github.io/vimxue-xi-bi-ji.html</link><description>&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
 &lt;h2&gt;基本使用&lt;/h2&gt;
 &lt;h4&gt;基本操作&lt;/h4&gt;
 &lt;ul&gt;
@@ -442,7 +442,7 @@ snipMate适合较短的片段，load_template适合较大的代码片段&lt;/p&g
 &lt;li&gt;&lt;em&gt;20140127&lt;/em&gt; 增加了文件比较，编码格式，单词间移动，撤销&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;20140201&lt;/em&gt; 增加Bundle管理插件&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;20150515&lt;/em&gt; 新增了macvim中文输入法冲突的问题 &lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Sat, 12 Jul 2014 00:00:00 +0800</pubDate><guid>tag:xuxiaofeng.me,2014-07-12:vimxue-xi-bi-ji.html</guid></item><item><title>python发送Email程序</title><link>http://xuxiaofeng.me/send_email.html</link><description>&lt;h4&gt;一个可带附件的例子&lt;/h4&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Sat, 12 Jul 2014 00:00:00 +0800</pubDate><guid>tag:kent0630.github.io,2014-07-12:vimxue-xi-bi-ji.html</guid></item><item><title>python发送Email程序</title><link>http://kent0630.github.io/send_email.html</link><description>&lt;h4&gt;一个可带附件的例子&lt;/h4&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c"&gt;#!/usr/bin/python&lt;/span&gt;
     &lt;span class="c"&gt;#encoding=utf-8&lt;/span&gt;
 
@@ -527,7 +527,7 @@ snipMate适合较短的片段，load_template适合较大的代码片段&lt;/p&g
         from email.header import Header&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Sat, 12 Jul 2014 12:00:01 +0800</pubDate><guid>tag:xuxiaofeng.me,2014-07-10:send_email.html</guid><category>python</category><category>email</category></item><item><title>测试</title><link>http://xuxiaofeng.me/ce-shi.html</link><description>&lt;h1&gt;Markdown学习笔记&lt;/h1&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Sat, 12 Jul 2014 12:00:01 +0800</pubDate><guid>tag:kent0630.github.io,2014-07-10:send_email.html</guid><category>python</category><category>email</category></item><item><title>测试</title><link>http://kent0630.github.io/ce-shi.html</link><description>&lt;h1&gt;Markdown学习笔记&lt;/h1&gt;
 &lt;h2&gt;windows下vim编辑markdown&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;安装 &lt;a href="http://www.python.org/getit/releases/2.7.3/"&gt;python for windwos环境&lt;/a&gt;. 
@@ -567,4 +567,4 @@ Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;
 &lt;/ol&gt;
 &lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/" title="Google"&gt;Google&lt;/a&gt; than from
 &lt;a href="http://search.yahoo.com/" title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://search.msn.com/" title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;example link&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Wed, 10 Jul 2013 00:00:00 +0800</pubDate><guid>tag:xuxiaofeng.me,2013-07-10:ce-shi.html</guid></item></channel></rss>
+&lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;example link&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Wed, 10 Jul 2013 00:00:00 +0800</pubDate><guid>tag:kent0630.github.io,2013-07-10:ce-shi.html</guid></item></channel></rss>
