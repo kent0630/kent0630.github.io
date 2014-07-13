@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>践行见远</title><link>http://xuxiaofeng.me/</link><description></description><atom:link href="http://xuxiaofeng.me/feeds/jian-ke.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Jul 2014 12:00:01 +0800</lastBuildDate><item><title>vim学习笔记</title><link>http://xuxiaofeng.me/vimxue-xi-bi-ji.html</link><description>&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
+&lt;h2&gt;基本使用&lt;/h2&gt;
+&lt;h4&gt;基本操作&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;5dd&lt;/em&gt; 从当前行开始删除5行&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;cc&lt;/em&gt; 删除当前行并且进入插入模式&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;5yy&lt;/em&gt; 从当前行开始拷贝5行&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;1,3d&lt;/em&gt; 删除1至3行&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;1,3y&lt;/em&gt; 拷贝1至3行 （.代表当前行，$代表最后一行）&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:&lt;C\-F&gt;&lt;/em&gt; 历史命令记录的窗口&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:Explore&lt;/em&gt;或&lt;em&gt;E&lt;/em&gt; 打开文件浏览器&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;C\-G&gt;&lt;/em&gt; 光标所在位置的行数和列数报告&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;D&lt;/em&gt; 删除到行尾&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:x&lt;/em&gt; 如果修改则保存&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;set rnu&lt;/em&gt; 显示相对行号&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;u&lt;/em&gt; 撤销，&lt;em&gt;&lt;C\-R&gt;&lt;/em&gt; 重做&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;.&lt;/em&gt; 重做上一个命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;光标移动&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;s&gt;zz 让光标所杂的行居屏幕中央&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;zt 让光标所杂的行居屏幕最上一行 t=top&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;s&gt;zb 让光标所杂的行居屏幕最下一行 b=bottom&lt;/s&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;H&lt;/em&gt;,&lt;em&gt;L&lt;/em&gt;,&lt;em&gt;M&lt;/em&gt; 控制光标移动到当前屏幕头屏幕尾和屏幕中&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;nG&lt;/em&gt; 跳转命令。n为行数，该命令立即使光标跳到指定行&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;w&lt;/em&gt; , &lt;em&gt;b&lt;/em&gt; 光标向前向后跳转一个单词&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;N|&lt;/em&gt; 光标到第N列&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;gg&lt;/em&gt; 到文件第一行&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;G&lt;/em&gt; 到文件最后一行&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;C\-]&gt;&lt;/em&gt; 链接跳转&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;C\-T&gt;&lt;/em&gt;,&lt;em&gt;&lt;C\-O&gt;&lt;/em&gt; 链接跳转和跳回&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;滚动&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;整页翻页&lt;em&gt;&lt;C\-F&gt;&lt;C\-B&gt;&lt;/em&gt; F就是Forword B就是Backward&lt;/li&gt;
+&lt;li&gt;翻半页&lt;em&gt;&lt;C\-D&gt;&lt;C\-U&gt;&lt;/em&gt;   D=down U=up&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set scrolloff=2&lt;/code&gt; 上下移动光标时, 始终保持光标上或下有两行在屏幕上.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;窗口&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;C\-W&gt; h，&lt;C\-W&gt; j，&lt;C\-W&gt; k，&lt;C\-W&gt; l&lt;/em&gt; 切换到左下上右窗口&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:split&lt;/em&gt; 文件名（开启另一个窗口察看指定文件）:new 开新窗口新建文件&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:vsplit&lt;/em&gt; 文件名（开启另一个窗口察看指定文件）:vnew 开新窗口新建文件&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:only&lt;/em&gt; 只保留当前窗口&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:close&lt;/em&gt; 关闭窗口，可防止最后一个窗口时退出vim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;标签页&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;:tabe&lt;/em&gt;新建一个标签页。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:tabn&lt;/em&gt;(&lt;em&gt;gt&lt;/em&gt;) \ &lt;em&gt;:tabp&lt;/em&gt;(&lt;em&gt;gT&lt;/em&gt;) 切换到下一个\上一个标签页。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:close&lt;/em&gt; 关闭当前标签页。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:qa&lt;/em&gt; 关闭所有标签页退出。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:tabdo&lt;/em&gt;+命令 在所有的标签页中执行指定命令  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;替换与查找&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;替换查找&lt;em&gt;%s/word1/word2/g&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;*&lt;/em&gt; 转到当前光标所指的单词下一次出现的地方,然后可以通过 &lt;em&gt;n&lt;/em&gt; 继续选择&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;#&lt;/em&gt; 转到当前光标所指的单词上一次出现的地方&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;g*,g#&lt;/em&gt; 与以上功能类似，但也查找部分配配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;高级技巧&lt;/h2&gt;
+&lt;h4&gt;多文件编辑&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;:args&lt;/em&gt; 查看文件列表&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:(2)n(ext)&lt;/em&gt;编辑下一文件，并且可以在前面计数&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:p(revious)&lt;/em&gt;编辑上一文件&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:first :last&lt;/em&gt;  跳转到第一个或者最后一个文件&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;C\-^&gt;&lt;/em&gt;在文件列表中的两个文件间跳转&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:args file1.c file2.c file3.h&lt;/em&gt; 打开另一个文件列表&lt;/li&gt;
+&lt;li&gt;一般情况下，如果当前文件没保存，需要保存他，或者在args后加  ! 放弃保存&lt;br /&gt;
+当然也可以设置&lt;em&gt;:set autowrite&lt;/em&gt; 自动保存，或者&lt;em&gt;:set noautowrite&lt;/em&gt;关闭自动保存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;MARK&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;m a&lt;/em&gt; 定义标记a&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;'a&lt;/em&gt; 跳转到定义过的标记a&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:marks a&lt;/em&gt; 列出标记a，缺省参数列出所有的位置标记&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:delm!&lt;/em&gt; 删除所有标记，&lt;em&gt;delm a&lt;/em&gt; 删除标记a&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;标记类别：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;'a - 'z  小写位置标记，在每个文件内有效。  &lt;/li&gt;
+&lt;li&gt;'A - 'Z  大写位置标记，也叫做文件标记，在文件间都有效。  &lt;/li&gt;
+&lt;li&gt;'0 - '9  数字位置标记，在 .viminfo 文件里设置。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当你跳转到另一个文件后，有两个预定义的标记非常有用:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;`"&lt;/em&gt; 这个标记使你跳转到你上次离开这个文件时的位置&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;`.&lt;/em&gt; 标记记住你最后一次修改文件的位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;文件间拷贝文本，由于windows下开启了剪贴板共享，所以暂时不学习
+共享剪贴板也有不便之处&lt;/p&gt;
+&lt;h4&gt;寄存器使用&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;可参考帮助:help v_p&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:reg&lt;/em&gt; 查看当前寄存器&lt;/li&gt;
+&lt;li&gt;使用计数器前调用"&amp;lt; register&amp;gt;&lt;/li&gt;
+&lt;li&gt;"&amp;lt; register&amp;gt;dd 将删除的行存到指定寄存器中&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;2,4y &amp;lt; register&amp;gt; 将2-4行复制到制定寄存器中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;计数器分类和主要计数器：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;无名寄存器 ""&lt;/li&gt;
+&lt;li&gt;10 个编号寄存器 "0 到 "9&lt;/li&gt;
+&lt;li&gt;行内删除寄存器 "-&lt;/li&gt;
+&lt;li&gt;26 个命名的寄存器 "a 到 "z 或者 "A 到 "Z&lt;/li&gt;
+&lt;li&gt;四个只读寄存器 ":、".、"% 和 "#&lt;/li&gt;
+&lt;li&gt;表达式寄存器 "=&lt;/li&gt;
+&lt;li&gt;选择和拖放寄存器 "*、"+ 和 "~&lt;/li&gt;
+&lt;li&gt;黑洞寄存器寄存器 "_&lt;/li&gt;
+&lt;li&gt;最近搜索模式寄存器 "/&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;%寄存器中存储了当前文件的文件名&lt;/li&gt;
+&lt;li&gt;#包含当前文件的目录路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;录制宏命令&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用&lt;em&gt;q&amp;lt; register&amp;gt;&lt;/em&gt;(regeister是指用户自己定义的从a-z的寄存器)，然后进行你要重复的操作，可以使很多步操作哦，完成 后用 &lt;em&gt;q&lt;/em&gt; 来结束。这样，当你需要重新做这些操作的时候，只需要用&lt;em&gt;n@&amp;lt; register&amp;gt;&lt;/em&gt;来调用即可,n为执行次数，省略为1&lt;br /&gt;
+&lt;em&gt;@@&lt;/em&gt; 重复上一个操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;修改文件名&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;:saveas filename&lt;/em&gt; 改变当前文件名立即保存&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:file filename&lt;/em&gt; 改变当前文件名暂时不保存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;折叠&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;zf&lt;/em&gt;  F-old creation (创建折叠)    命令：zf 行数 j &lt;/li&gt;
+&lt;li&gt;&lt;em&gt;zo&lt;/em&gt;  O-pen a fold (打开折叠)  &lt;em&gt;zO&lt;/em&gt; 打开全部 &lt;/li&gt;
+&lt;li&gt;&lt;em&gt;zc&lt;/em&gt;  C-lose a fold (关闭折叠)  &lt;em&gt;zC&lt;/em&gt; 关闭全部&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;zA&lt;/em&gt; 
+你可以重复 "zr" 和 "zm" 来打开和关闭若干层嵌套的折叠&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;键盘映射（@TODO）&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;:map ,&lt;/em&gt;           : 列出以逗号开始的键盘映射&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;\&amp;lt;unique&gt;&lt;/em&gt; 如果该映射已经存在，系统会提示错误&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;编辑技巧&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;普通模式&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;di[&lt;/em&gt; 删除一对 [] 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;di(&lt;/em&gt; 删除一对 () 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;di&amp;lt;&lt;/em&gt; 删除一对 &amp;lt;&amp;gt; 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;di{&lt;/em&gt; 删除一对 {} 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;dit&lt;/em&gt; 删除一对 HTML/XML 的标签内部的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;di”&lt;/em&gt; di’ 删除一对引号字符 (” 或 ‘ ) 中所有字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;插入模式&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;ci[&lt;/em&gt; 删除一对 [] 中的所有字符并进入插入模式&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ci(&lt;/em&gt; 删除一对 () 中的所有字符并进入插入模式&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ci&amp;lt;&lt;/em&gt; 删除一对 &amp;lt;&amp;gt; 中的所有字符并进入插入模式&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ci{&lt;/em&gt; 删除一对 {} 中的所有字符并进入插入模式&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;cit&lt;/em&gt; 删除一对 HTML/XML 的标签内部的所有字符并进入插入模式&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ci”&lt;/em&gt; ci’ 删除一对引号字符 (” 或 ‘) 中所有字符并进入插入模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择模式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;vi[&lt;/em&gt; 选择一对 [] 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;vi(&lt;/em&gt; 选择一对 () 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;vi&amp;lt;&lt;/em&gt; 选择一对 &amp;lt;&amp;gt; 中的所有字符&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;vi{&lt;/em&gt; 选择一对 {} 中的所有字符&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;dt(&lt;/em&gt; 删除到下一个"("前为之  t( 代表跳转到下一个(前 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;:set a&lt;/em&gt; 列出配置项a, &lt;em&gt;:set all&lt;/em&gt; 列出所有配置项&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;ddp&lt;/em&gt; 上下两行调换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;文件编码和格式&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;三个配置文件编码的参数encoding(enc)、fileencoding(fenc)、fileecodings(fencs)&lt;ul&gt;
+&lt;li&gt;enc，vim用于显示的编码，不管最后的文件是什么编码的，vim都会将其转换为当前系统编码来进行处理&lt;/li&gt;
+&lt;li&gt;fencs,是用来在打开文件的时候进行解码的猜测列表&lt;/li&gt;
+&lt;li&gt;fenc，是当前文件的编码，也就是说，一个在vim里面已经正确显示了的文件(前提是你的系统环境跟你的enc设置匹配)，你可以通过改变 fenc后再w来将此文件存成不同的编码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;fileformats(ffs)指定优先处理的文件格式，fileformat(ff)指定当前文件的格式&lt;/li&gt;
+&lt;li&gt;改变文件格式（dos-&amp;gt;unix）方法如下: &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;vim&lt;/span&gt; &lt;span class="n"&gt;dos&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;fileformat&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;unix&lt;/span&gt;
+&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;w&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://blog.csdn.net/keepliving/article/details/5623362"&gt;VIM乱码原因与解决方案&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;单词间移动&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;w&lt;/em&gt;、&lt;em&gt;e&lt;/em&gt;向后移动一个单词（分别停留在词首和词尾），&lt;em&gt;b&lt;/em&gt;向后移动一个单词（停留在词尾）&lt;/li&gt;
+&lt;li&gt;单词定义通过&lt;em&gt;iskeyword&lt;/em&gt;进行设置，具体参见&lt;em&gt;：h iskeyword&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WORD&lt;/strong&gt;（由非空白字符序列组成字符串，以空白分隔，空行也算一个WORD）移动，&lt;em&gt;W&lt;/em&gt;、&lt;em&gt;E&lt;/em&gt;、&lt;em&gt;B&lt;/em&gt;移动含义和w、e、b相同，只是移动幅度从一个单词变为一个WORD&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;个性化vimrc&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;autoindent&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;自动缩排，如当前行是从第3个字符的位置开始编辑的,按回车后光标会自动定位在下一行第三3个字符的位置。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;paste&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;置粘贴模式，这样粘贴过来的程序代码就不会错位了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;guifont&lt;/span&gt;&lt;span class="o"&gt;=*&lt;/span&gt; &lt;span class="err"&gt;显示字体对话框设置字体&lt;/span&gt;
+&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;guifontwide&lt;/span&gt;&lt;span class="o"&gt;=*&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;wide是双字节字体，这样可以分别设置中文和英文字体&lt;/p&gt;
+&lt;h4&gt;撤销undo&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;set undolevels=5000&lt;/code&gt; 设置可撤销的次数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt; 撤销命令，&lt;code&gt;:redo&lt;/code&gt; &lt;C-R&gt; 为取消撤销（重做）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:undolist&lt;/code&gt; 显示撤销列表，&lt;code&gt;:undo+编号&lt;/code&gt;撤销到某个分支&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;g-&lt;/code&gt;,&lt;code&gt;g+&lt;/code&gt; 返回较早的文本状态和返回较新的文本状态&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:earlier 10m&lt;/code&gt; 恢复到十分钟前的文本状态，&lt;code&gt;:later 5s&lt;/code&gt;跳转到5秒钟后的状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;其他&lt;/h4&gt;
+&lt;p&gt;把当前文件转换成HTML文件  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;runtime&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt; &lt;span class="n"&gt;syntax&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;hr /&gt;
+&lt;h2&gt;程序员常用技巧&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;% 跳到匹配的括号,跳到匹配处，比如括号之间，C的宏指令#if #else #endif之间&lt;/li&gt;
+&lt;li&gt;gD 跳到局部变量的定义处，高亮所有局部变量  &lt;C-O&gt;跳转回来,&lt;C-I&gt;结合&lt;C-O&gt;可以来回跳转&lt;/li&gt;
+&lt;li&gt;[I     : 显示光标处的狭义字可以匹配的行(高级指令)&lt;br /&gt;
+    可以全文查找与光标处的狭义字相匹配的字，&lt;br /&gt;
+    这在查找函数原型和实现，或者变量使用的时候很有用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;排版&lt;/strong&gt; 在任何处v%选中该括号内的所有内容，然后=可以按C语言排版程序&lt;br /&gt;
+gg=G可以全文排版&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缩进&lt;/strong&gt; 选中代码块然后&gt;或者\&amp;lt;可以改变代码块的缩进 
+　&lt;em&gt;&amp;gt;&amp;gt;&lt;/em&gt; 和 &lt;em&gt;&amp;lt;&amp;lt;&lt;/em&gt; 改变一行的缩进&lt;/li&gt;
+&lt;li&gt;给代码插入行号&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;/^/&lt;/span&gt;&lt;span class="n"&gt;exec&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;s/^/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strpart&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;    &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;配色&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;配色文件在colors目录下&lt;/li&gt;
+&lt;li&gt;colorscheme murphy(配色方案名称)  &lt;/li&gt;
+&lt;li&gt;其他配色方案可以参考：&lt;a href="http://code.google.com/p/vimcolorschemetest/"&gt;http://code.google.com/p/vimcolorschemetest/&lt;/a&gt;&lt;br /&gt;
+可以在其中找到一个自己喜欢的。安装colorscheme时，只需要把它们拷贝到.vim/color目录下就行了。&lt;/li&gt;
+&lt;li&gt;【插件】 &lt;strong&gt;&lt;em&gt;csExplorer&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+使用输入:ColorSchemeExplorer即可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://blog.csdn.net/mdl13412/article/details/8129904"&gt;自己动手扩展vim插件——配色篇&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;自动补全&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;C\-P&gt;和&lt;C\-N&gt;&lt;/em&gt; 连续按选择
+-【插件】&lt;strong&gt;&lt;em&gt;AutoClose&lt;/em&gt;&lt;/strong&gt; --（http://www.vim.org/scripts/script.php?script_id=1849 ）
+不过这个插件目前我在使用的过程中发现有个缺陷，就是在嵌套的括号中再插入一组括号，右括号插入不了，只能采取关闭插件功能，或者采用粘贴的方式。例如：
+        if ( ( a  &amp;gt;  b  &amp;amp;&amp;amp;  c  &amp;gt;  d )
+你要在“b”后面插一个右括号，你会发现无法完成操作。当你insert模式下输入“）”时，光标直接跳到“d”后面的括号“）”之后，这种情况下 我解决这个问题的办法是关闭插件，输入“/a” AutoClose Off，然后插入右括号;再打开插件功能,输入“/a” AutoClose On。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;【插件】&lt;strong&gt;&lt;em&gt;neocomplcache&lt;/em&gt;&lt;/strong&gt; 和&lt;strong&gt;&lt;em&gt;neosnippet&lt;/em&gt;&lt;/strong&gt; @TODO&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://yunying.me/?p=486"&gt;neocomplcache和neosnippet配置心得&lt;/a&gt;
+&lt;a href="http://www.cnblogs.com/iiaijimaai/archive/2013/05/19/3054115.html"&gt;打造一个有感觉的Vim（二）&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;【插件】&lt;strong&gt;&lt;em&gt;snipMate&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过tab键触发  &lt;/li&gt;
+&lt;li&gt;在snippets目录下配置代码片段  &lt;/li&gt;
+&lt;li&gt;_.snippets文件是全局配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;注释开关&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;EnhancedCommentify&lt;/strong&gt; -- 程序代码注释 （&lt;a href="http://www.vim.org/scripts/script.php?script_id=23"&gt;http://www.vim.org/scripts/script.php?script_id=23&lt;/a&gt;） &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;\&amp;lt;leader&gt;x&lt;/em&gt; 实现注释的开闭&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;\&amp;lt;leader&gt;c&lt;/em&gt; 开闭注释然后跳转到下一行
+要实现上面的注释自动缩进、在/×  ×/填充空格，需要定义两个全局变量来控制脚本的执行.你可以在.vimrc中进行定义，以控制制缩进、注释样式等来符合你的要求。详细变量也参脚本说明。 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="mi"&gt;1&lt;/span&gt;         &lt;span class="n"&gt;let&lt;/span&gt;  &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;EnhCommentifyRespectIndent&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Yes&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;         &lt;span class="n"&gt;let&lt;/span&gt;  &lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;EnhCommentifyPretty&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Yes&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不支持esqlc，下载插件后需要手动添加对esqlc的支持&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NerdComment&lt;/strong&gt; 更加强大的注释插件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&amp;lt;\leader&gt;ci&lt;/em&gt; 加注释，再按取消注释&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;\&amp;lt;leader&gt;cc&lt;/em&gt; 加注释，再按重复添加&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;\&amp;lt;leader&gt;cu&lt;/em&gt; 取消注释&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;\&amp;lt;leader&gt;cA&lt;/em&gt; 行尾注释&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;let NERDSpaceDelims = 1&lt;/code&gt; 在左注释符之后，右注释符之前留有空格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;代码比较&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;diffsplit file2&lt;/code&gt; 水平分割窗口与当前文件比较，&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vert diffsplit file2&lt;/code&gt; 垂直分割窗口与当前文件比较&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:set diffopt=context:3&lt;/code&gt; 显示不同文本的上下文3行，默认为6行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;:diffupdate&lt;/code&gt; 强制更新比较结果&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;[c&lt;/em&gt;、&lt;em&gt;]c&lt;/em&gt; 查找前（后）一个不同点&lt;/li&gt;
+&lt;li&gt;文件合并： &lt;code&gt;dp&lt;/code&gt;(diff put),&lt;code&gt;do&lt;/code&gt;(diff get)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;网络编辑&lt;/h4&gt;
+&lt;p&gt;【插件】&lt;strong&gt;&lt;em&gt;netrw&lt;/em&gt;&lt;/strong&gt;（vim7已自带此插件）：  &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt; &lt;span class="n"&gt;ftp&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//user@host:port/filepath&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;阅读目录命令最后要加斜杠，目录浏览方式通过i改变,s改变排序方式&lt;/p&gt;
+&lt;h4&gt;代码模板&lt;/h4&gt;
+&lt;p&gt;【插件】&lt;strong&gt;&lt;em&gt;load_template&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://www.vimer.cn/2010/02/vimer-cn%E5%8E%9F%E5%88%9Bvimgvim%E6%8F%92%E4%BB%B6load_template%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83.html"&gt;《vimer.cn原创vim(gvim)插件load_template正式发布》&lt;/a&gt;&lt;br /&gt;
+snipMate适合较短的片段，load_template适合较大的代码片段&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4&gt;版本控制(@TODO)&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h2&gt;vimscript&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;:help vim-script-intro&lt;/em&gt; vimScript的帮助(教程)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不错的参考文章（共五个部分）: &lt;a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-1/"&gt;使用脚本编写 Vim 编辑器[1]&lt;/a&gt; &lt;a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-2/"&gt;[2]&lt;/a&gt; &lt;a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-3/"&gt;[3]&lt;/a&gt; &lt;a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-4/"&gt;[4]&lt;/a&gt; &lt;a href="http://www.ibm.com/developerworks/cn/linux/l-vim-script-5/"&gt;[5]&lt;/a&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;执行脚本命令： &lt;em&gt;source 脚本地址&lt;/em&gt; 
+或者，可以在 Vim 命令行中，在冒号后面直接输入脚本命令。例如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;MyBackupFunc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;expand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;%&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;all&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;save&lt;/span&gt;&lt;span class="sc"&gt;&amp;#39;:&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;recent&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;通过在 Vim 内输入 &lt;code&gt;:help keycodes&lt;/code&gt; 可以看到这些特殊符号的完整列表。 &lt;br /&gt;
+学习内置函数 &lt;code&gt;:help functions&lt;/code&gt;  &lt;br /&gt;
+内置函数列表 &lt;code&gt;:help function-list&lt;/code&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;关于插件&lt;/h2&gt;
+&lt;h4&gt;使用Bundle管理插件&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;安装Bundle插件,需要安装git支持，然后执行如下命令，后面的目标地址可以自行指定&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//github.com/gmarik/vundle.git ~/.vim/vimfiles/bundle/vundle&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;修改vimrc文件，添加如下内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;nocompatible&lt;/span&gt;               &lt;span class="s"&gt;&amp;quot; be iMproved&lt;/span&gt;
+&lt;span class="n"&gt;filetype&lt;/span&gt; &lt;span class="n"&gt;off&lt;/span&gt;                   &lt;span class="s"&gt;&amp;quot; required!&lt;/span&gt;
+
+&lt;span class="n"&gt;set&lt;/span&gt; &lt;span class="n"&gt;rtp&lt;/span&gt;&lt;span class="o"&gt;+=~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bundle&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vundle&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;  &lt;span class="s"&gt;&amp;quot;需要修改该路径到安装目录&lt;/span&gt;
+&lt;span class="n"&gt;call&lt;/span&gt; &lt;span class="n"&gt;vundle&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="s"&gt;&amp;quot; let Vundle manage Vundle&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; required!&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;gmarik&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vundle&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; original repos on github&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;tpope&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fugitive&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;Lokaltog&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;easymotion&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;rstacruz&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;sparkup&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;rtp&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;tpope&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;vim&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;rails&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; vim-scripts 上的插件可以直接配置名字 &lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;L9&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;FuzzyFinder&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; non github repos&lt;/span&gt;
+&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//git.wincent.com/command-t.git&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; ...&lt;/span&gt;
+
+&lt;span class="n"&gt;filetype&lt;/span&gt; &lt;span class="n"&gt;plugin&lt;/span&gt; &lt;span class="n"&gt;indent&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;     &lt;span class="s"&gt;&amp;quot; required!&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; Brief help  -- 此处后面都是vundle的使用命令&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; :BundleList          - list configured bundles&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; :BundleInstall(!)    - install(update) bundles&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; :BundleSearch(!) foo - search(or refresh cache first) for foo&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; see :h vundle for more details or wiki for FAQ&lt;/span&gt;
+&lt;span class="s"&gt;&amp;quot; NOTE: comments after Bundle command are not allowed.      &lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;默认会将插件安装到.vim目录下，需要修改&lt;code&gt;bundle/vundle/autoload/vundle.vim&lt;/code&gt;中的&lt;code&gt;vundle#rc&lt;/code&gt;函数（43行），将路径改成需要下载到的目标地址即可&lt;/li&gt;
+&lt;li&gt;Bundle 命令介绍&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;BundleSearch&lt;/strong&gt; keyword  搜索关键字为keyword的插件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BundleInstall&lt;/strong&gt; 安装插件，已安装过的会自动跳过&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BundleUpdate&lt;/strong&gt; 更新所有插件，一旦git源中插件的内容有变化会自动更新&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BundleClean&lt;/strong&gt;  将vimrc配置中的&lt;code&gt;Bundel XXX&lt;/code&gt;注释，然后执行该命令，XXX插件会被删除&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BundleList&lt;/strong&gt; 列出所有已启用的插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;其他&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;:set runtimepath&lt;/em&gt; 查看插件安装路径，vim插件一般安装在 5 个地方,可以通过&lt;code&gt;:set rtp+=xxx&lt;/code&gt;修改&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;:scriptnames&lt;/em&gt; 列出所有执行过的脚本名字，以它们初次执行之顺序排列。（&lt;strong&gt;注意：按顺序加载&lt;/strong&gt;）&lt;br /&gt;
+&lt;strong&gt;TIPS:&lt;/strong&gt; ~\vimfiles下便于迁移和版本升级,使用网盘同步可以让用户体验一致&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;vimperator&lt;/em&gt;&lt;/strong&gt; 像使用vim一样使用firefox的插件  &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;macvim中文输入法执行时被错误捕获的问题：&lt;br /&gt;
+执行:&lt;code&gt;defaults write org.vim.MacVim MMUseInlineIm 0&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="http://wiki.hotoo.me/Vim.html"&gt;闲耘的Vim&lt;/a&gt; Vim非常全面的介绍。&lt;br /&gt;
+&lt;a href="http://www.berlinix.com/index.php"&gt;波斯克斯&lt;/a&gt; 关于不错的涉及vim尤其是vimViki的网络日志
+&lt;a href="http://www.360doc.com/content/10/1128/15/4807202_73143894.shtml"&gt;VIM学习笔记&lt;/a&gt; 很不错的学习笔记，图文并茂&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;修订记录：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;201204&lt;/em&gt;   初稿&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;20120607&lt;/em&gt; 增加rnu&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;20140127&lt;/em&gt; 增加了文件比较，编码格式，单词间移动，撤销&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;20140201&lt;/em&gt; 增加Bundle管理插件&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;20150515&lt;/em&gt; 新增了macvim中文输入法冲突的问题 &lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Sat, 12 Jul 2014 00:00:00 +0800</pubDate><guid>tag:xuxiaofeng.me,2014-07-12:vimxue-xi-bi-ji.html</guid></item><item><title>python发送Email程序</title><link>http://xuxiaofeng.me/send_email.html</link><description>&lt;h4&gt;一个可带附件的例子&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="c"&gt;#!/usr/bin/python&lt;/span&gt;
+    &lt;span class="c"&gt;#encoding=utf-8&lt;/span&gt;
+
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;smtplib&lt;/span&gt;
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;base64&lt;/span&gt;
+    &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;email.mime.multipart&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;MIMEMultipart&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;email.mime.text&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;MIMEText&lt;/span&gt;
+    &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;email.header&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Header&lt;/span&gt;
+
+    &lt;span class="c"&gt;# 定义发送列表&lt;/span&gt;
+    &lt;span class="n"&gt;mailto_list&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;xuxiaofeng.nb@ccb.com&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;raymond_xu@qq.com]&lt;/span&gt;
+
+    &lt;span class="c"&gt;# 设置服务器名称、用户名、密码以及邮件&lt;/span&gt;
+    &lt;span class="n"&gt;mail_host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;36.0.191.1&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;mail_user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="n"&gt;mail_pass&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="c"&gt;# 发送邮件函数&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;send_mail&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mail_from&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;to_list&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="sd"&gt;        to_list: 发送给谁&lt;/span&gt;
+&lt;span class="sd"&gt;        sub: 主题&lt;/span&gt;
+&lt;span class="sd"&gt;        context: 内容&lt;/span&gt;
+&lt;span class="sd"&gt;        send_mail(&amp;quot;xxx.nb@ccb.com&amp;quot;,&amp;quot;sub&amp;quot;,&amp;quot;context&amp;quot;)&lt;/span&gt;
+&lt;span class="sd"&gt;        &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MIMEMultipart&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="c"&gt;#支持附件&lt;/span&gt;
+
+        &lt;span class="c"&gt;# 如果html格式，将_subtpye设成html&lt;/span&gt;
+        &lt;span class="c"&gt;# msg = MIMEText(context, _subtype=&amp;#39;plain&amp;#39;, _charset=&amp;#39;utf-8&amp;#39;) &lt;/span&gt;
+
+        &lt;span class="n"&gt;context&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\n\r&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;
+        &lt;span class="n"&gt;txt1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;MIMEText&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;context&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_subtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;plain&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;_charset&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="c"&gt;# txt1.replace_header(&amp;#39;Content-Transfer-Encoding&amp;#39;, &amp;#39;quoted-printable&amp;#39;)  #否则邮件原文看不懂，但并不影响读信&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;txt1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c"&gt;# att1=base64.encodestring(open(&amp;#39;output.txt&amp;#39;,&amp;#39;rb&amp;#39;).read())  #附件base64编码&lt;/span&gt;
+        &lt;span class="n"&gt;att1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;output.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;rb&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; 
+        &lt;span class="n"&gt;att1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;MIMEText&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;att1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;att1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replace_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;application/octet-stream;name=&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="n"&gt;Header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;中文附件测试.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;att1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Content-Disposition&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;attachment;filename=&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;中文附件名测试.txt&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attach&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;att1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+        &lt;span class="c"&gt;# att2=open(&amp;#39;library.zip&amp;#39;,&amp;#39;rb&amp;#39;).read()  &lt;/span&gt;
+        &lt;span class="c"&gt;# att2=MIMEText(att2)&lt;/span&gt;
+        &lt;span class="c"&gt;# att2.replace_header(&amp;#39;Content-Type&amp;#39;,&amp;#39;application/octet-stream;name=&amp;quot;%s&amp;quot;&amp;#39; % Header(&amp;#39;lib.zip&amp;#39;,&amp;#39;utf-8&amp;#39;))&lt;/span&gt;
+        &lt;span class="c"&gt;# att2.add_header(&amp;#39;Content-Disposition&amp;#39;, &amp;#39;attachment;filename=&amp;quot;%s&amp;quot;&amp;#39; %Header(&amp;#39;lib.zip&amp;#39;,&amp;#39;utf-8&amp;#39;))&lt;/span&gt;
+        &lt;span class="c"&gt;# msg.attach(att2)&lt;/span&gt;
+
+        &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Subject&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;From&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mail_from&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;To&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;to_list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; 
+        &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
+            &lt;span class="n"&gt;send_smtp&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;smtplib&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;SMTP&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+            &lt;span class="n"&gt;send_smtp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mail_host&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="c"&gt;#send_smtp.login(mail_user, mail_pass)&lt;/span&gt;
+            &lt;span class="n"&gt;send_smtp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sendmail&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;mail_from&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;to_list&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;as_string&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+            &lt;span class="n"&gt;send_smtp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+        &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;send_mail&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;徐小峰&amp;lt;xuxiaofeng.nb@ccb.com&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;mailto_list&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;邮件主题&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;邮件正文&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)):&lt;/span&gt; 
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u&amp;quot;邮件发送成功&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; 
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;u&amp;quot;邮件发送失败&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;问题&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;py2exe打包时出现如下错误
+        The following modules appear to be missing
+        ['_scproxy', 'email.Header', 'email.MIMEMultipart']&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查看了python的lib目录下mail下的文件，可能和之前版本发生了变化，导入模块改成如下即可：
+        from email.mime.multipart import MIMEMultipart&lt;br /&gt;
+        from email.header import Header&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Sat, 12 Jul 2014 12:00:01 +0800</pubDate><guid>tag:xuxiaofeng.me,2014-07-10:send_email.html</guid><category>python</category><category>email</category></item><item><title>测试</title><link>http://xuxiaofeng.me/ce-shi.html</link><description>&lt;h1&gt;Markdown学习笔记&lt;/h1&gt;
+&lt;h2&gt;windows下vim编辑markdown&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 &lt;a href="http://www.python.org/getit/releases/2.7.3/"&gt;python for windwos环境&lt;/a&gt;. 
+    默认安装在c:\python27目录下,默认安装即可&lt;/li&gt;
+&lt;li&gt;安装&lt;a href="http://pypi.python.org/packages/any/M/Markdown/Markdown-2.0.win32.exe"&gt;Markdown-2.0.win32.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装配置vim或者gvim &lt;blockquote&gt;
+&lt;p&gt;noremap &lt;F8&gt; :!cmd /c c:\Python27\python c:\Python27\scripts\markdown.py %:t -e chinese &amp;gt; %:r.html&lt;CR&gt; 
+noremap &lt;F12&gt;  :!cmd /c start ./%:r.html&lt;CR&gt; 
+F8 编译 &lt;F12&gt; 查看编译后文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;markdown&lt;a href="http://wowubuntu.com/markdown/basic.html"&gt;快速入门&lt;/a&gt;，&lt;a href="http://wowubuntu.com/markdown/"&gt;完整语法说明&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Header 1&lt;/h1&gt;
+&lt;h2&gt;Header 2&lt;/h2&gt;
+&lt;h3&gt;Header 3&lt;/h3&gt;
+&lt;h4&gt;Header 4&lt;/h4&gt;
+&lt;h5&gt;Header 5&lt;/h5&gt;
+&lt;h6&gt;Header 6&lt;/h6&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;This is the second paragraph in the blockquote.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;This is an H2 in a blockquote&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;a&lt;/li&gt;
+&lt;li&gt;b&lt;/li&gt;
+&lt;li&gt;c
+Some of these words &lt;em&gt;are emphasized&lt;/em&gt;.
+Some of these words &lt;em&gt;are emphasized also&lt;/em&gt;.
+Use two asterisks for &lt;strong&gt;strong emphasis&lt;/strong&gt;.
+Or, if you prefer, &lt;strong&gt;use two underscores instead&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I get 10 times more traffic from &lt;a href="http://google.com/" title="Google"&gt;Google&lt;/a&gt; than from
+&lt;a href="http://search.yahoo.com/" title="Yahoo Search"&gt;Yahoo&lt;/a&gt; or &lt;a href="http://search.msn.com/" title="MSN Search"&gt;MSN&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is an &lt;a href="http://example.com/" title="With a Title"&gt;example link&lt;/a&gt;.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Wed, 10 Jul 2013 00:00:00 +0800</pubDate><guid>tag:xuxiaofeng.me,2013-07-10:ce-shi.html</guid></item></channel></rss>

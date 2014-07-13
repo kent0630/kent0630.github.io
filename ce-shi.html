@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>测试</title>
+
+    <link rel="stylesheet" href="http://xuxiaofeng.me/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://xuxiaofeng.me/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://xuxiaofeng.me/theme/css/style.css" />
+    <link rel="stylesheet" href="http://xuxiaofeng.me/theme/css/pygments.css" />	
+    <script src="http://xuxiaofeng.me/theme/js/vendor/custom.modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="http://xuxiaofeng.me">践行见远</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://xuxiaofeng.me/ce-shi.html" rel="bookmark"
+        title="Permalink to 测试">测试</a></h3>
+    </header>
+
+<h6 class="subheader" title="2013-07-10T00:00:00">2013年07月10日
+</h6>
+
+
+    <h1>Markdown学习笔记</h1>
+<h2>windows下vim编辑markdown</h2>
+<ol>
+<li>安装 <a href="http://www.python.org/getit/releases/2.7.3/">python for windwos环境</a>. 
+    默认安装在c:\python27目录下,默认安装即可</li>
+<li>安装<a href="http://pypi.python.org/packages/any/M/Markdown/Markdown-2.0.win32.exe">Markdown-2.0.win32.exe</a></li>
+<li>安装配置vim或者gvim <blockquote>
+<p>noremap <F8> :!cmd /c c:\Python27\python c:\Python27\scripts\markdown.py %:t -e chinese &gt; %:r.html<CR> 
+noremap <F12>  :!cmd /c start ./%:r.html<CR> 
+F8 编译 <F12> 查看编译后文件</p>
+</blockquote>
+</li>
+</ol>
+<p>markdown<a href="http://wowubuntu.com/markdown/basic.html">快速入门</a>，<a href="http://wowubuntu.com/markdown/">完整语法说明</a></p>
+<h1>Header 1</h1>
+<h2>Header 2</h2>
+<h3>Header 3</h3>
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+<h6>Header 6</h6>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>This is a blockquote.</p>
+</blockquote>
+<p>This is the second paragraph in the blockquote.</p>
+</blockquote>
+<h2>This is an H2 in a blockquote</h2>
+</blockquote>
+<ol>
+<li>a</li>
+<li>b</li>
+<li>c
+Some of these words <em>are emphasized</em>.
+Some of these words <em>are emphasized also</em>.
+Use two asterisks for <strong>strong emphasis</strong>.
+Or, if you prefer, <strong>use two underscores instead</strong>.</li>
+</ol>
+<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
+<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+<p>This is an <a href="http://example.com/" title="With a Title">example link</a>.</p>
+<p class="subheader">Category: <a href="http://xuxiaofeng.me/category/ji-zhu.html">技术</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://xuxiaofeng.me/archives.html">Archives</a>
+            <li><a href="http://xuxiaofeng.me/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://xuxiaofeng.me/category/ji-zhu.html">技术</a></li>
+   
+        </ul>
+
+        <h5 class="sidebar-title">Links</h5>
+        <ul class="side-nav">
+            <li><a href="http://getpelican.com/">Pelican</a></li>
+            <li><a href="http://python.org/">Python.org</a></li>
+            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            <li><a href="#">You can modify those links in your config file</a></li>
+        </ul>
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav social">
+            <li><a href="#">豆瓣</a></li>
+            <li><a href="#">知乎</a></li>
+            <li><a href="http://weibo.com/jakerxu">我的微博</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <p><a href="http://xuxiaofeng.me">践行见远</a> &copy; 践客 2014
+            </div>
+        </div>
+    </div>
+</footer>
+<a href="https://github.com/kent0630/kent0630.github.io">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+</html>
