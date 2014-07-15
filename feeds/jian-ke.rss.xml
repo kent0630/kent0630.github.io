@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>践行见远</title><link>http://kent0630.github.io/</link><description></description><atom:link href="http://kent0630.github.io/feeds/jian-ke.rss.xml" rel="self"></atom:link><lastBuildDate>Sat, 12 Jul 2014 12:00:01 +0800</lastBuildDate><item><title>vim学习笔记</title><link>http://kent0630.github.io/vimxue-xi-bi-ji.html</link><description>&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>践行见远</title><link>http://kent0630.github.io/</link><description></description><atom:link href="http://kent0630.github.io/feeds/jian-ke.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 14 Jul 2014 00:00:00 +0800</lastBuildDate><item><title>About Me</title><link>http://kent0630.github.io/about-me.html</link><description>&lt;p&gt;About me content&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Mon, 14 Jul 2014 00:00:00 +0800</pubDate><guid>tag:kent0630.github.io,2014-07-14:about-me.html</guid></item><item><title>vim学习笔记</title><link>http://kent0630.github.io/vimxue-xi-bi-ji.html</link><description>&lt;h1&gt;VIM/GVIM学习笔记&lt;/h1&gt;
 &lt;h2&gt;基本使用&lt;/h2&gt;
 &lt;h4&gt;基本操作&lt;/h4&gt;
 &lt;ul&gt;
