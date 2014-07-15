@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>践行见远</title><link href="http://kent0630.github.io/" rel="alternate"></link><link href="http://kent0630.github.io/feeds/jian-ke.atom.xml" rel="self"></link><id>http://kent0630.github.io/</id><updated>2014-07-15T00:00:00+08:00</updated><entry><title>About Me</title><link href="http://kent0630.github.io/about-me.html" rel="alternate"></link><updated>2014-07-15T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:kent0630.github.io,2014-07-14:about-me.html</id><summary type="html">&lt;h2&gt;About me&lt;/h2&gt;
-&lt;p&gt;ID:践客&lt;/p&gt;
-&lt;p&gt;-80后，理想主义者，轻度拖延症，话痨，典型巨蟹男
--阿迷
--pythoner, vim党&lt;/p&gt;
-&lt;p&gt;银行IT从业人员，但是热爱互联网，希望设计出自己的产品&lt;/p&gt;
-&lt;h4&gt;工具&lt;/h4&gt;</summary></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>践行见远</title><link href="http://kent0630.github.io/" rel="alternate"></link><link href="http://kent0630.github.io/feeds/jian-ke.atom.xml" rel="self"></link><id>http://kent0630.github.io/</id><updated>2014-07-15T00:00:00+08:00</updated><entry><title>About Me</title><link href="http://kent0630.github.io/about-me.html" rel="alternate"></link><updated>2014-07-15T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:kent0630.github.io,2014-07-14:about-me.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;ID: &lt;code&gt;践客&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;80后，&lt;del&gt;理想主义者&lt;/del&gt;，&lt;del&gt;完美主义&lt;/del&gt;, 轻度拖延症，间歇性话痨，典型巨蟹男&lt;/li&gt;
+&lt;li&gt;银行IT从业人员，渴望成为产品经理，设计出自己的互联网产品&lt;/li&gt;
+&lt;li&gt;Pythoner, VIMer, &lt;del&gt;Javaer&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;阿迷&lt;/li&gt;
+&lt;/ul&gt;</summary></entry></feed>
