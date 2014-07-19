@@ -5,7 +5,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>测试</title>
+    <title>我的VIM插件(1)--开篇</title>
 
     <link rel="stylesheet" href="./theme/css/normalize.css" />
     <link rel="stylesheet" href="./theme/css/foundation.min.css" />
@@ -45,55 +45,55 @@
     <div class="large-9 columns">
 <article>
     <header>
-        <h3 class="article-title"><a href="./ce-shi.html" rel="bookmark"
-        title="Permalink to 测试">测试</a></h3>
+        <h3 class="article-title"><a href="./wo-de-vimcha-jian-1-kai-pian.html" rel="bookmark"
+        title="Permalink to 我的VIM插件(1)--开篇">我的VIM插件(1)--开篇</a></h3>
     </header>
 
-<h6 class="subheader" title="2013-07-10T00:00:00">2013年07月10日
+<h6 class="subheader" title="2014-07-16T00:00:00">2014年07月16日
 </h6>
 
 
-    <h1>Markdown学习笔记</h1>
-<h2>windows下vim编辑markdown</h2>
-<ol>
-<li>安装 <a href="http://www.python.org/getit/releases/2.7.3/">python for windwos环境</a>. 
-    默认安装在c:\python27目录下,默认安装即可</li>
-<li>安装<a href="http://pypi.python.org/packages/any/M/Markdown/Markdown-2.0.win32.exe">Markdown-2.0.win32.exe</a></li>
-<li>安装配置vim或者gvim <blockquote>
-<p>noremap <F8> :!cmd /c c:\Python27\python c:\Python27\scripts\markdown.py %:t -e chinese &gt; %:r.html<CR> 
-noremap <F12>  :!cmd /c start ./%:r.html<CR> 
-F8 编译 <F12> 查看编译后文件</p>
-</blockquote>
-</li>
-</ol>
-<p>markdown<a href="http://wowubuntu.com/markdown/basic.html">快速入门</a>，<a href="http://wowubuntu.com/markdown/">完整语法说明</a></p>
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<h4>Header 4</h4>
-<h5>Header 5</h5>
-<h6>Header 6</h6>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>This is a blockquote.</p>
-</blockquote>
-<p>This is the second paragraph in the blockquote.</p>
-</blockquote>
-<h2>This is an H2 in a blockquote</h2>
-</blockquote>
-<ol>
-<li>a</li>
-<li>b</li>
-<li>c
-Some of these words <em>are emphasized</em>.
-Some of these words <em>are emphasized also</em>.
-Use two asterisks for <strong>strong emphasis</strong>.
-Or, if you prefer, <strong>use two underscores instead</strong>.</li>
-</ol>
-<p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from
-<a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
-<p>This is an <a href="http://example.com/" title="With a Title">example link</a>.</p>
+    <!--status:draft-->
+
+<h4>开篇</h4>
+<p>大学时初识vim，觉得这货实在是太难用了，差点错过了这个神器，直到两年前看到了善用
+佳软的介绍再次上手，顿觉相见恨晚！vim的学习曲线略陡峭，期间反复折腾配置和插件,
+我庆幸自己坚持下来了,终于找到了现在顺手顺心的感觉。插件机制是vim获得“神力”的最
+主要原动力，但是由于vim的开源开放的特点，使得vim插件的质量参差不齐，而且插件之
+间也会存在冲突，好的插件能让我们事半功倍，但是插件的选择和调试有时候也会成为
+vimer的噩梦,我希望通过一个系列文章分享我使用的vim插件,与大家多交流心得,也使后来
+者少走弯路。</p>
+<h4>为什么用VIM？</h4>
+<ul>
+<li>跨平台：我工作的主要环境是windows,偶尔也会切换到linux和类unix系统，非工作时间
+  主要使用mac, vim在不同的平台下的使用体验基本保持一致(我使用GUI版本，很少使用
+  terminal下的vim)</li>
+<li>适用于大部分文本编辑场景:目前主要用于编写python, c, markdown文档,当然</li>
+<li>高度可定制:有大量的插件可以使用，可以修改键盘映射，总之能铸造出属于自己的独一
+  无二的vim, 对于geek、爱折腾的人来说简直是不可多得的玩物</li>
+<li>强大的帮助文档:vim的帮助系统好用程度简直令人发指, 并且可以安装中文帮助(之后
+  会介绍)</li>
+<li>提升效率：工具价值就是让你的工作更有效, vim使用全键盘操作, 在编辑的时候无需离
+  开键盘区, 另外自定义的功能和快捷键能让你随心所欲地控制文字，并且避免重复劳动</li>
+<li>编辑之美：原生的vim是简陋的（这可能会引起一些有极简主义倾向的朋友的反感),但是
+  经过配置, 无论是写文章还是coding都会有一种美的享受。</li>
+</ul>
+<h4>适合的读者</h4>
+<ul>
+<li>有使用VIM经验者, 希望提高vim使用技巧</li>
+<li>不适合刚准备开始学习VIM初学者</li>
+</ul>
+<h4>我选择插件标准</h4>
+<ul>
+<li>基本不影响打开的速度和使用的流畅性</li>
+<li>使用原生vimScripts编写优先</li>
+<li>跨平台使用（win, mac，linux)</li>
+</ul>
+<h4>直达电梯</h4>
+<ul>
+<li>我的VIM插件(1)</li>
+<li>我的VIM插件(2)</li>
+</ul>
 <p class="subheader">分类: <a href="./category/wei-fen-lei.html">未分类</a>
 
 </p>
@@ -104,7 +104,7 @@ Or, if you prefer, <strong>use two underscores instead</strong>.</li>
 
 	<h4>评论</h4>
 <!-- 多说评论框 start -->
-<div class="ds-thread" data-thread-key="践行见远" data-title="测试" data-url="./ce-shi.html"></div>
+<div class="ds-thread" data-thread-key="践行见远" data-title="我的VIM插件(1)--开篇" data-url="./wo-de-vimcha-jian-1-kai-pian.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -139,7 +139,6 @@ Or, if you prefer, <strong>use two underscores instead</strong>.</li>
 		
         <h5 class="sidebar-title">分类</h5>
         <ul class="side-nav">
-            <li><a href="./category/ji-zhu.html">技术</a></li>
             <li><a href="./category/wei-fen-lei.html">未分类</a></li>
    
         </ul>
@@ -162,14 +161,13 @@ Or, if you prefer, <strong>use two underscores instead</strong>.</li>
 
 </div> <!-- End Main Content and Sidebar -->
 
-
 <!-- Footer -->
 <footer class="row">
     <div class="large-12 columns">
         <hr />
         <div class="row">
             <div class="large-6 columns">
-              <p><a href=".">践行见远</a> &copy; 践客 2014
+              <p><a href=".">践行见远</a> &copy; 2014
                 Power by <a href="http://getpelican.com">Pelican</a>
             </div>
         </div>
