@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>践行见远</title><link>http://kent0630.github.io/</link><description></description><atom:link href="http://kent0630.github.io/feeds/jian-ke.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 16 Jul 2014 00:00:00 +0800</lastBuildDate><item><title>我的VIM插件（1）--开篇</title><link>http://kent0630.github.io/wo-de-vimcha-jian-1-kai-pian.html</link><description>&lt;!--status:draft--&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>践行见远</title><link href="http://kent0630.github.io/" rel="alternate"></link><link href="http://kent0630.github.io/feeds/vim.atom.xml" rel="self"></link><id>http://kent0630.github.io/</id><updated>2014-07-16T00:00:00+08:00</updated><entry><title>我的VIM插件（1）--开篇</title><link href="http://kent0630.github.io/wo-de-vimcha-jian-1-kai-pian.html" rel="alternate"></link><updated>2014-07-16T00:00:00+08:00</updated><author><name>践客</name></author><id>tag:kent0630.github.io,2014-07-16:wo-de-vimcha-jian-1-kai-pian.html</id><summary type="html">&lt;!--status:draft--&gt;
 
 &lt;h4&gt;开篇&lt;/h4&gt;
 &lt;p&gt;大学时初识vim，觉得这货实在是太难用了，差点错过了这个神器，直到两年前看到了善用
@@ -40,11 +40,4 @@ vimer的噩梦,我希望通过一个系列文章分享我使用的vim插件,与�
 &lt;li&gt;我的VIM插件（1）&lt;/li&gt;
 &lt;li&gt;我的VIM插件（2）&lt;/li&gt;
 &lt;li&gt;我的VIM插件（3）&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Wed, 16 Jul 2014 00:00:00 +0800</pubDate><guid>tag:kent0630.github.io,2014-07-16:wo-de-vimcha-jian-1-kai-pian.html</guid><category>vim</category></item><item><title>About Me</title><link>http://kent0630.github.io/about-me.html</link><description>&lt;ul&gt;
-&lt;li&gt;ID: &lt;code&gt;践客&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;坐标：宁波&lt;/li&gt;
-&lt;li&gt;80后，&lt;del&gt;理想主义者&lt;/del&gt;，&lt;del&gt;完美主义&lt;/del&gt;，轻度拖延症，间歇性话痨，典型巨蟹男&lt;/li&gt;
-&lt;li&gt;银行IT从业人员，渴望成为产品经理，设计出自己的互联网产品&lt;/li&gt;
-&lt;li&gt;Pythoner, VIMer, &lt;del&gt;Javaer&lt;/del&gt;&lt;/li&gt;
-&lt;li&gt;阿迷&lt;/li&gt;
-&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">践客</dc:creator><pubDate>Tue, 15 Jul 2014 00:00:00 +0800</pubDate><guid>tag:kent0630.github.io,2014-07-14:about-me.html</guid></item></channel></rss>
+&lt;/ul&gt;</summary><category term="vim"></category></entry></feed>
